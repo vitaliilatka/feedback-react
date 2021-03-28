@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
+import Container from "./components/Container/Container";
+import Counter from "./components/Counter/Counter";
 
 function App() {
   return (
-    <div>
-      <header>
-        homework02
-      </header>
-    </div>
+    <Container>
+      <Counter />;
+    </Container>
   );
 }
 
