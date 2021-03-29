@@ -1,7 +1,5 @@
 import React from "react";
 
-const Value = ({ value }) => (
-  <span className="Counter__GoodValue">{value}</span>
-);
+const Value = ({ value }) => <p className="Counter__GoodValue">{value}</p>;
 
 export default Value;

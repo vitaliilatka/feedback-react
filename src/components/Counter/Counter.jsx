@@ -1,7 +1,10 @@
 import React from "react";
 import "./Counter.module.css";
 import Controls from "./Controls";
-import Value from "./Value";
+// import Value from "./Value";
+import CountGoodFeedback from "../Statistics/CountGoodFeedback";
+import CountNeutralFeedback from "../Statistics/CountNeutralFeedback";
+import CountBadFeedback from "../Statistics/CountBadFeedback";
 
 class Counter extends React.Component {
   static defaultProps = {
@@ -35,17 +38,17 @@ class Counter extends React.Component {
   render() {
     return (
       <div className="Counter">
-        <span className="Counter__GoodValue">{this.state.goodValue}</span>
-        <span className="Counter__NeutralValue">{this.state.neutralValue}</span>
-        <span className="Counter__BadValue">{this.state.badValue}</span>
-
-        <Value value={this.state.value} />
-
         <Controls
           onGoodFeedback={this.handleGoodFeedback}
           onNeutralFeedback={this.handleNeutralFeedback}
           onBadFeedback={this.handleBadFeedback}
         />
+
+        <h1>Statistics</h1>
+        <CountGoodFeedback value={this.state.goodValue} />
+        <CountNeutralFeedback value={this.state.neutralValue} />
+        <CountBadFeedback value={this.state.badValue} />
+        {/* <Value value={this.state.value} /> */}
       </div>
     );
   }
