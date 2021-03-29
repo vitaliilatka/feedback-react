@@ -1,13 +1,11 @@
 import React from "react";
-import Container from "./components/Container/Container";
 import Counter from "./components/Counter/Counter";
 
-function App() {
-  return (
-    <Container>
-      <Counter />;
-    </Container>
-  );
-}
+const App = () => (
+  <>
+    <h1>Please leave feedback</h1>
+    <Counter />
+  </>
+);
 
 export default App;
