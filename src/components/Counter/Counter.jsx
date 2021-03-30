@@ -55,12 +55,12 @@ class Counter extends React.Component {
           }
         />
         <CountPositiveFeedbackPercentage
-          value={
+          value={Math.round(
             (this.state.goodValue * 100) /
-            (this.state.goodValue +
-              this.state.neutralValue +
-              this.state.badValue)
-          }
+              (this.state.goodValue +
+                this.state.neutralValue +
+                this.state.badValue)
+          )}
         />
       </div>
     );
