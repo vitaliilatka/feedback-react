@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Controls from "./Controls";
 // import Value from "./Value";
 import CountGoodFeedback from "../Statistics/CountGoodFeedback";
@@ -6,6 +7,7 @@ import CountNeutralFeedback from "../Statistics/CountNeutralFeedback";
 import CountBadFeedback from "../Statistics/CountBadFeedback";
 import CountTotalFeedback from "../Statistics/CountTotalFeedback";
 import CountPositiveFeedbackPercentage from "../Statistics/CountPositiveFeedbackPercentage";
+import Dropdown from "./Dropdown";
 
 class Counter extends React.Component {
   static defaultProps = {
@@ -49,6 +51,7 @@ class Counter extends React.Component {
         <CountGoodFeedback value={this.state.goodValue} />
         <CountNeutralFeedback value={this.state.neutralValue} />
         <CountBadFeedback value={this.state.badValue} />
+        <Dropdown />
         <CountTotalFeedback
           value={
             this.state.goodValue + this.state.neutralValue + this.state.badValue
@@ -66,5 +69,13 @@ class Counter extends React.Component {
     );
   }
 }
+
+Counter.propTypes = {
+  stats: PropTypes.shape({
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+  }),
+};
 
 export default Counter;
