@@ -1,0 +1,30 @@
+.container {
+  text-align: center;
+}
+
+.button {
+  min-width: 65px;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+
+.button:not(:last-child) {
+  margin-right: 10px;
+}
+
+.good {
+  composes: button;
+  background-color: rgb(121, 204, 149);
+}
+
+.neutral {
+  composes: button;
+  background-color: rgb(244, 245, 173);
+}
+
+.bad {
+  composes: button;
+  background-color: rgb(241, 129, 101);
+}
