@@ -16,22 +16,17 @@ const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
       Total: <span>{total}</span>
     </li>
     <li>
-      Positive feedback: <span>{positivePercentage || 0}%</span>
+      Positive feedback: <span>{positivePercentage()}%</span>
     </li>
   </ul>
 );
-
-Statistics.defaultProps = {
-  total: 0,
-  positivePercentage: 0,
-};
 
 Statistics.propTypes = {
   good: PropTypes.number.isRequired,
   neutral: PropTypes.number.isRequired,
   bad: PropTypes.number.isRequired,
-  total: PropTypes.number,
-  positivePercentage: PropTypes.number,
+  total: PropTypes.func.isRequired,
+  positivePercentage: PropTypes.func.isRequired,
 };
 
 export default Statistics;
