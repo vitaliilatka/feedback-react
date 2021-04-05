@@ -21,8 +21,8 @@ const App = () => {
     }));
 
   const countTotalFeedback = () => {
-    const values = Object.values(stats);
-    return values.reduce((acc, value) => acc + value, 0);
+    const result = good + neutral + bad;
+    return result;
   };
 
   const countPositiveFeedbackPercentage = () =>
